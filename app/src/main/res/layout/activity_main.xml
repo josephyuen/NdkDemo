@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"/>
+
+    <!--<com.example.joseph.ndkdemo.MyWebView-->
+        <!--android:id="@+id/webview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+    <android.support.v7.widget.AppCompatEditText
+         android:hint="输入多个数字,以空格隔开"
+         android:id="@+id/editText"
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:inputType="text"
+         />
+
+    <Button
+        android:layout_marginLeft="35dp"
+        android:text="Max"
+        android:id="@+id/btn_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Min"
+        android:id="@+id/btn_min"
+        android:layout_marginLeft="280dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
