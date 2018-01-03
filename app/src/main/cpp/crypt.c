@@ -10,7 +10,7 @@
 char password[] = "Li Jia Sheng";
 
 
-JNIEXPORT int JNICALL Java_com_example_joseph_ndkdemo_Crytor_getMaxOrMin(JNIEnv *env,jclass object,jintArray array,jboolean max){
+JNIEXPORT int JNICALL Java_com_example_joseph_ndkdemo_Crytor_getMaxOrMin(JNIEnv *env,jobject object,jintArray array,jboolean max){
     jint * int_array = (*env)->GetIntArrayElements(env,array,NULL);
     int lenArray = (*env)->GetArrayLength(env,array);
 
@@ -26,6 +26,8 @@ JNIEXPORT int JNICALL Java_com_example_joseph_ndkdemo_Crytor_getMaxOrMin(JNIEnv 
             }
         }
     }
+
+    (*env)->ReleaseIntArrayElements(env,array,int_array,0);
 
     return tmp;
 }
@@ -53,6 +55,8 @@ JNIEXPORT void JNICALL Java_com_example_joseph_ndkdemo_Crytor_cryptFile(JNIEnv *
     int pwd_len = strlen(password);
     while ((ch = fgetc(f_read)) != EOF){
          //通过异或运算进行加密
+        fputc(ch ^ password[i % pwd_len],f_write);
+
         fputc(ch ^ password[i % pwd_len],f_write);
         i++;
     }
@@ -103,14 +107,11 @@ JNIEXPORT void JNICALL Java_com_example_joseph_ndkdemo_Crytor_decryptFile(JNIEnv
 
 JNIEXPORT jstring JNICALL
 Java_com_example_joseph_ndkdemo_Crytor_getName(JNIEnv *env,jobject this){
-
     return (*env)->NewStringUTF(env,"!!阿胜!!");
-
 }
 
 
 JNIEXPORT void JNICALL
 Java_com_example_joseph_ndkdemo_Crytor_testMethod1(JNIEnv *env, jclass type) {
-
 
 }

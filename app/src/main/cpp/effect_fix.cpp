@@ -2,12 +2,13 @@
 // Created by joseph on 2017/11/10.
 //
 
-#include "inc/fmod.hpp"
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <jni.h>
-
+#include <iostream>
 #include <android/log.h>
+#include "inc/fmod.hpp"
 //日志输出宏定义
 #define LOGI(FORMAT, ...) __android_log_print(ANDROID_LOG_INFO,"jason",FORMAT,##__VA_ARGS__);
 #define LOGE(FORMAT, ...) __android_log_print(ANDROID_LOG_ERROR,"jason",FORMAT,##__VA_ARGS__);

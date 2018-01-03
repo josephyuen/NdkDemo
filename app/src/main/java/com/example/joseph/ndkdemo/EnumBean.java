@@ -30,5 +30,4 @@ enum EnumBean{
          private String NAME;
          private int AGE;
 
-//    public abstract String getInfo();
 }

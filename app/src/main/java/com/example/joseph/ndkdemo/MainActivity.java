@@ -16,21 +16,16 @@ public class MainActivity extends AppCompatActivity implements Runnable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-//        WebView webView = new MyWebView(this);
-
-
-//        webView.loadUrl("http://www.baidu.com");
-
-        // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
         tv.setText(Crytor.getName());
         edit = findViewById(R.id.editText);
         findViewById(R.id.btn_max).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 Toast.makeText(MainActivity.this,"!!--"+Crytor.getMaxOrMin(StringArrayToIntArray(),true),Toast.LENGTH_SHORT).show();
+                Demo2 demo2 = new Demo2();
+                demo2.sayHello();
+
+                Toast.makeText(MainActivity.this, "value:" + demo2.num, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -41,12 +36,6 @@ public class MainActivity extends AppCompatActivity implements Runnable{
                 Toast.makeText(MainActivity.this,"!!--"+Crytor.getMaxOrMin(StringArrayToIntArray(),false),Toast.LENGTH_SHORT).show();
             }
         });
-
-
-//        new Handler().postDelayed(this,1000);
-
-//        Crytor.cryptFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/李家胜.txt",
-//                Environment.getExternalStorageDirectory().getAbsolutePath()+"/李佳胜痞子.txt");
     }
 
     private int[] StringArrayToIntArray(){
@@ -62,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements Runnable{
 
         return int_arry;
     }
-
 
     @Override
     public void run() {
